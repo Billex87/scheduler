@@ -21,13 +21,13 @@ const state = {
     "3": {
       id: 3,
       time: "2pm",
-      interview: { student: "Archie Cohen", interviewer: 2 }
+      interview: { student: "LeBron James", interviewer: 2 }
     },
     "4": { id: 4, time: "3pm", interview: null },
     "5": {
       id: 5,
       time: "4pm",
-      interview: { student: "Chad Takahashi", interviewer: 2 }
+      interview: { student: "Bill McKinnon", interviewer: 2 }
     }
   },
   interviewers: {

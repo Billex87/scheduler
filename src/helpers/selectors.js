@@ -28,14 +28,14 @@ export function getInterview(state, interview) {
   const interviewerObj = state.interviewers;
   const resultsObj = {};
   // console.log('state', state)
-  console.log('interview', interview); //interview { student: 'Archie Cohen', interviewer: 2 }
+  // console.log('interview', interview); //interview { student: 'Archie Cohen', interviewer: 2 }
 
   if (!interview) {
     return null;
   }
 
   const interviewerID = interview.interviewer;
-  console.log('interviewID', interviewerID);
+  // console.log('interviewID', interviewerID);
   for (let key in interviewerObj) {
     if (Number(key) === interviewerID) {
       resultsObj.student = interview.student;

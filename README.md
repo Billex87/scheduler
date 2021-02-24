@@ -1,5 +1,15 @@
 # Interview Scheduler
 
+Scheduler is a single-page app built with React where the user can book an appointment with an interviewer. There are 5 appointment slots for each day (Monday-Friday). An appointment can be edited or cancelled by the user. 
+
+PostgreSQL is used as the database. Jest, Cypress and Storybook were also all used throughout the development process for testing purposes.
+
+## Screenshots
+
+The appointments section on the app is made up of various components that render depending on the state.
+
+!["Walkthrough"] (https://github.com/Billex87/scheduler/blob/master/docs/Confirm.png)
+
 ## Setup
 
 Install dependencies with `npm install`.

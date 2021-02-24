@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function useApplicationData(props) {
@@ -30,7 +30,7 @@ export default function useApplicationData(props) {
 
   //function to update the state when booking an interview
   function bookInterview(id, interview) {
-    console.log('bookInterview', id, interview);
+    // console.log('bookInterview', id, interview);
     //here we use immutable patterns to update the state object
     //here we are spreading the OG appointment, and then setting/overriding the interview key
     const appointment = {
@@ -50,12 +50,12 @@ export default function useApplicationData(props) {
         //not props in here as state lives inside the custom hook
         //why dont we do state.appointments here?, it wont know that the interview has been cancelled so we need to pass in new appts
         const foundDay = state.days.find(howToFindDay);
-        console.log(foundDay);
+        // console.log(foundDay);
         const spotsRemaining = calcSpotsRemaining(appointments, foundDay);
-        console.log(spotsRemaining);
+        // console.log(spotsRemaining);
         //copy of OG day with updated spots remaining, update a piece of state so we spread the day and update a key
         const newDayObj = { ...foundDay, spots: spotsRemaining };
-        console.log(newDayObj);
+        // console.log(newDayObj);
         //to get index we want to overwrite in days array
         //days is an array not an object so we need to use findIndex here
         const dayIndex = state.days.findIndex(howToFindDay);
@@ -76,7 +76,7 @@ export default function useApplicationData(props) {
     for (const appointmentID of foundDay.appointments) {
       //looking to see whether or not interview property has an interview or null
       //     2: { id: 2, time: "1pm", interview: null } this here
-      console.log(appointments[appointmentID].interview);
+      // console.log(appointments[appointmentID].interview);
       if (!appointments[appointmentID].interview) {
         spots += 1;
       }
@@ -108,12 +108,12 @@ export default function useApplicationData(props) {
         //not props in here as state lives inside the custom hook
         //why dont we do state.appointments here?, it wont know that the interview has been cancelled so we need to pass in new appts
         const foundDay = state.days.find(howToFindDay);
-        console.log(foundDay);
+        // console.log(foundDay);
         const spotsRemaining = calcSpotsRemaining(appointments, foundDay);
-        console.log(spotsRemaining);
+        // console.log(spotsRemaining);
         //copy of OG day with updated spots remaining, update a piece of state so we spread the day and update a key
         const newDayObj = { ...foundDay, spots: spotsRemaining };
-        console.log(newDayObj);
+        // console.log(newDayObj);
         //to get index we want to overwrite in days array
         //days is an array not an object so we need to use findIndex here
         const dayIndex = state.days.findIndex(howToFindDay);

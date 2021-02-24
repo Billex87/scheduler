@@ -22,7 +22,7 @@ export default function InterviewerList(props) {
         Interviewer
       </h4>
       <ul
-        setInterviewer
+        // setInterviewer
         className="interviewers__list">
         {interviewerList}
       </ul>

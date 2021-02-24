@@ -14,7 +14,7 @@ function transition (next, replace = false) {
 function back() {
   if (history.length >= 1) {
     setMode(history[history.length-1])
-    history.pop()
+    setHistory(history => history.slice(0, -1))
   }
 }
   return { mode, transition, back };

@@ -8,8 +8,10 @@ PostgreSQL is used as the database. Jest, Cypress and Storybook were also all us
 
 The appointments section on the app is made up of various components that render depending on the state.
 
-!["Walkthrough"] (https://github.com/Billex87/scheduler/blob/master/docs/Confirm.png)
-
+!["Walkthrough"](https://github.com/Billex87/scheduler/blob/master/docs/Scheduler.mov)
+!["Home Page"](https://github.com/Billex87/scheduler/blob/master/docs/Home.png)
+!["Saving"](https://github.com/Billex87/scheduler/blob/master/docs/Saving.png)
+!["Error"](https://github.com/Billex87/scheduler/blob/master/docs/Confirm.png)
 ## Setup
 
 Install dependencies with `npm install`.

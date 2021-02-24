@@ -43,7 +43,6 @@ export default function Appointment(props) {
     //transition to SHOW once props.bookinterview has successfully been called
     props.bookInterview(props.id, interview)
       .then(() => {
-        // console.log(props.id, interview)
         transition(SHOW);
       })
       .catch(error => transition(ERROR_SAVE, true))
@@ -74,8 +73,8 @@ export default function Appointment(props) {
           onDelete={() => transition(CONFIRM)}
           onEdit={() => transition(EDIT)}
         />
-      )}
-      {mode === CREATE && (
+        )}
+        {mode === CREATE && (
         <Form
           interviewers={props.interviewers} //will become {interviewers}
           onSave={save}
@@ -94,7 +93,7 @@ export default function Appointment(props) {
         <Form
           name={props.interview.student}
           interviewers={props.interviewers}
-          interviewer={props.interview.interviewer.id}
+          interviewer={props.interview.interviewer}
           onSave={save}
           onCancel={() => back(SHOW)}
         />

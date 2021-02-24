@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
+import axios from "../../node_modules/axios";
 
 export default function useApplicationData(props) {
 
@@ -33,6 +33,7 @@ export default function useApplicationData(props) {
     // console.log('bookInterview', id, interview);
     //here we use immutable patterns to update the state object
     //here we are spreading the OG appointment, and then setting/overriding the interview key
+    console.log(state);
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }

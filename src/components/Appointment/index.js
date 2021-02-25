@@ -9,7 +9,7 @@ import Status from "components/Appointment/Status";
 import Confirm from "components/Appointment/Confirm";
 import Error from "components/Appointment/Error";
 import useVisualMode from "hooks/useVisualMode";
-// import useVisualMode from ".../../hooks/useVisualMode";
+
 
 
 export default function Appointment(props) {
@@ -24,29 +24,22 @@ export default function Appointment(props) {
   const ERROR_SAVE = "ERROR_SAVE"
   const ERROR_DELETE = "ERROR_DELETE"
   
-  //return value from useVisualMode has three keys the mode, transition and back
-  //good ol destructure to pull it out here
-  //useVisualMode keeping track of web pages you visit like your browser, pushes a new webpage into your history
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
 
-  //got this data from our form and now it is going to build an object out of it
-  //takes the object and passes it back up to the application
   function save(name, interviewer) {
     const interview = {
       student: name,
       interviewer
     };
     transition(SAVING);
-    //call the applications book interview so this is how we get it back up to application
-    //transition to SHOW once props.bookinterview has successfully been called
+
     props.bookInterview(props.id, interview)
       .then(() => {
         transition(SHOW);
       })
       .catch(error => transition(ERROR_SAVE, true))
-
   }
 
   function cancel() {
@@ -58,7 +51,6 @@ export default function Appointment(props) {
       .catch(error => transition(ERROR_DELETE, true))
   }
 
-// console.log(props.interview.interviewer);
   return (
     <article data-testid="appointment" className="appointment">
       <Header time={props.time} />
@@ -76,7 +68,7 @@ export default function Appointment(props) {
         )}
         {mode === CREATE && (
         <Form
-          interviewers={props.interviewers} //will become {interviewers}
+          interviewers={props.interviewers} 
           onSave={save}
           onCancel={() => back(EMPTY)}
         />
@@ -101,7 +93,7 @@ export default function Appointment(props) {
       {mode === ERROR_SAVE && (
       <Error 
       message="Could not save appointment" 
-      onClose={back} //why just pack instead of back(SHOW?)
+      onClose={back}
       />)}
       {mode === ERROR_DELETE && ( 
       <Error

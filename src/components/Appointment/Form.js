@@ -3,7 +3,6 @@ import Button from "components/Button";
 import InterviewerList from "components/InterviewerList";
 
 export default function Form(props) {
-  // console.log('props', props);
   const [name, setName] = useState(props.name || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
   const [error, setError] = useState("");
@@ -19,11 +18,10 @@ export default function Form(props) {
     props.onCancel();
   }
 
-
   function validate() {
     if (name === "") {
       setError("Student name cannot be blank");
-      return; //this will stop the validate function so props.onSave never gets called
+      return;
     }
     setError("");
     props.onSave(name, interviewer);
@@ -44,10 +42,10 @@ export default function Form(props) {
           />
         </form>
         <section className="appointment__validation">{error}</section> 
-        <InterviewerList //each interviewlist item knows what the id is, above is just rendering the error
+        <InterviewerList 
           interviewers={props.interviewers}
           interviewer={interviewer}
-          setInterviewer={setInterviewer} //passing down the setInterviewer function
+          setInterviewer={setInterviewer} 
         />
       </section>
       <section className="appointment__card-right">

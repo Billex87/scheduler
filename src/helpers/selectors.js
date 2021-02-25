@@ -7,7 +7,6 @@ export function getAppointmentsForDay(state, day) {
       }
     }
   }
-  // console.log(apptArr)
   return apptArr;
 }
 
@@ -20,22 +19,18 @@ export function getInterviewersForDay(state, day) {
       }
     }
   }
-  // console.log(apptArr)
   return InterviewersArr;
 }
 
 export function getInterview(state, interview) {
   const interviewerObj = state.interviewers;
   const resultsObj = {};
-  // console.log('state', state)
-  // console.log('interview', interview); //interview { student: 'Archie Cohen', interviewer: 2 }
 
   if (!interview) {
     return null;
   }
 
   const interviewerID = interview.interviewer;
-  // console.log('interviewID', interviewerID);
   for (let key in interviewerObj) {
     if (Number(key) === interviewerID) {
       resultsObj.student = interview.student;
@@ -46,13 +41,3 @@ export function getInterview(state, interview) {
   return resultsObj;
 }
 
-
-//BETTER VERSION OF GETAPPTS
-// export function getInterviewersForDay(state, day) {
-// const foundDay = state.days.find((days) => days.name === day);
-// if (state.days.length === 0 || foundDay === undefined) {
-//   return [];
-// }
-// return foundDay.appointments.map((id) => state.appointments[id]);
-
-// }

@@ -21,13 +21,9 @@ import Application from "components/Application";
 
 afterEach(cleanup);
 
-// it("renders without crashing", () => {
-//   render(<Application />);
-// });
+
 
 describe("Application", () => {
-
-  // rewritten version using async as opposed to traditional promises syntax
   it("changes the schedule when a new day is selected", async () => {
     const { getByText } = render(<Application />);
 
@@ -64,16 +60,6 @@ describe("Application", () => {
     );
 
     expect(getByText(day, "no spots remaining")).toBeInTheDocument();
-
-    //how to remove warnings from gary one of two options
-    // const result = await waitForElement(() => getByText(container, "Lydia Miller-Jones"));
-
-    // return result
-
-    // or
-
-    // const result = waitForElement(() => getByText(container, "Lydia Miller-Jones"));
-    // return await result
   });
 
   it("loads data, cancels an interview and increases the spots remaining for Monday by 1", async () => {
